@@ -1,7 +1,6 @@
 language: python
 python:
 - '3.3'
-- pypy
 - pip
 before_install:
 - openssl aes-256-cbc -K $encrypted_2ede7b5765d2_key -iv $encrypted_2ede7b5765d2_iv -in secrets.tar.enc -out secrets.tar -d
@@ -9,6 +8,7 @@ before_install:
 - mv google_compute_engine /home/travis/.ssh/
 - chmod 0600 /home/travis/.ssh/google_compute_engine
 install:
+- pip install -U setuptools
 - pip install ansible==2.3.0 molecule apache-libcloud
 env:
   matrix:
