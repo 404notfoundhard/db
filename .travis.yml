@@ -9,7 +9,7 @@ before_install:
 - chmod 0600 /home/travis/.ssh/google_compute_engine
 install:
 - pip install -U setuptools
-- pip install ansible==2.3.0 molecule apache-libcloud
+- pip install ansible==2.4 molecule apache-libcloud
 env:
   matrix:
   - GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
